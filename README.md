@@ -1,8 +1,12 @@
 ResolverSamples
 =============================
 
-BUILD
+SETUP
+	
+	define "WpsInstallLocation" in your maven settings.xml. It should point to the WebSphere folder of the portal installation
 
+BUILD
+	
 	mvn clean package
     
 INSTALL

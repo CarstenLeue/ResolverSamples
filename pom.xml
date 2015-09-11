@@ -36,7 +36,7 @@
 		<developer>
 			<name>Carsten Leue</name>
 			<email>carsten.leue@de.ibm.com</email>
-			<url>https://github.com/CarstenLeue</url>
+			<url>https://github.com/CarstenLeue/</url>
 			<id>CarstenLeue</id>
 			<organization>IBM Corporation</organization>
 			<organizationUrl>http://www.ibm.com</organizationUrl>
@@ -185,6 +185,13 @@
 					</archive>
 				</configuration>
 			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.5.2</version>
+			</plugin>
+
 		</plugins>
 	</build>
 
@@ -200,5 +207,11 @@
 		<module>ResolverSampleClientPortletPCA</module>
 		<module>ResolverSamplePAA</module>
 	</modules>
+
+	<scm>
+		<connection>scm:git:git@github.com:CarstenLeue/ResolverSamples.git</connection>
+		<url>scm:git:git@github.com:CarstenLeue/ResolverSamples.git</url>
+		<developerConnection>scm:git:git@github.com:CarstenLeue/ResolverSamples.git</developerConnection>
+	</scm>
 
 </project>

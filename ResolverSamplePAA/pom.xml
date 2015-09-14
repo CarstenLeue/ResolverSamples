@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>ResolverSamplePAA</artifactId>
 	<packaging>pom</packaging>
@@ -96,7 +97,9 @@
 						<configuration>
 							<target>
 								<property name="tmp.dependencies" location="${project.build.directory}/order.txt" />
-								<replaceregexp match="\s{3}([^:]*):([^:]*):([^:]*):(.*)|^(.*):$" replace="&lt;!-- \4 --&gt;&lt;dependency groupId=&quot;\1&quot; artifactId=&quot;\2&quot; type=&quot;\3&quot;/&gt;" flags="g" byline="true" file="${tmp.dependencies}" />
+								<replaceregexp match="\s{3}([^:]*):([^:]*):([^:]*):(.*)|^(.*):$"
+									replace="&lt;!-- \4 --&gt;&lt;dependency groupId=&quot;\1&quot; artifactId=&quot;\2&quot; type=&quot;\3&quot;/&gt;"
+									flags="g" byline="true" file="${tmp.dependencies}" />
 								<loadfile property="tmp.order.content" srcFile="${tmp.dependencies}" />
 								<echo file="${tmp.dependencies}">
 									&lt;dependencies&gt;${tmp.order.content}&lt;/dependencies&gt; </echo>
@@ -157,7 +160,8 @@
 							<stylesheet>${basedir}/src/main/xslt/order.xslt</stylesheet>
 							<outputDir>${project.build.directory}/${project.build.finalName}/components</outputDir>
 							<fileMappers>
-								<fileMapper implementation="org.codehaus.plexus.components.io.filemappers.FileExtensionMapper">
+								<fileMapper
+									implementation="org.codehaus.plexus.components.io.filemappers.FileExtensionMapper">
 									<targetExtension>.properties</targetExtension>
 								</fileMapper>
 							</fileMappers>
@@ -166,6 +170,21 @@
 					</transformationSets>
 				</configuration>
 			</plugin>
+
+			<plugin>
+				<groupId>com.github.fracpete</groupId>
+				<artifactId>latex-maven-plugin</artifactId>
+				<version>1.4.0</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>latex</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-assembly-plugin</artifactId>
@@ -185,6 +204,7 @@
 					</execution>
 				</executions>
 			</plugin>
+
 		</plugins>
 	</build>
 </project>

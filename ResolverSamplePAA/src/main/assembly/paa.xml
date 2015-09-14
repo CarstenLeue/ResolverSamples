@@ -25,6 +25,14 @@
 			<directory>${project.build.directory}/${project.build.finalName}</directory>
 			<outputDirectory>/</outputDirectory>
 		</fileSet>
+		<!-- include the article -->
+		<fileSet>
+			<directory>${project.build.directory}</directory>
+			<includes>
+				<include>*.pdf</include>
+			</includes>
+			<outputDirectory>documentation</outputDirectory>
+		</fileSet>
 	</fileSets>
 
 	<dependencySets>

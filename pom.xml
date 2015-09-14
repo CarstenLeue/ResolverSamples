@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.ibm.portal.samples</groupId>
@@ -191,7 +192,14 @@
 				<version>2.5.2</version>
 			</plugin>
 
+			<plugin>
+				<groupId>com.github.fracpete</groupId>
+				<artifactId>latex-maven-plugin</artifactId>
+				<version>1.4.0</version>
+			</plugin>
+
 		</plugins>
+
 	</build>
 
 	<modules>
@@ -211,7 +219,7 @@
 		<connection>scm:git:git@github.com:CarstenLeue/ResolverSamples.git</connection>
 		<url>scm:git:git@github.com:CarstenLeue/ResolverSamples.git</url>
 		<developerConnection>scm:git:git@github.com:CarstenLeue/ResolverSamples.git</developerConnection>
-	  <tag>1.0</tag>
-  </scm>
+		<tag>1.0</tag>
+	</scm>
 
 </project>
